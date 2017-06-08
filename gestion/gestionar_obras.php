@@ -87,6 +87,7 @@
 
             <?php include('../modal/modificar_obra.php'); ?>
             <?php include('../modal/registrar_obra.php'); ?>
+            <?php include('../modal/eliminar_obra.php'); ?> 
 
             <!--home section-->
 

@@ -86,10 +86,25 @@ submitHandler: function(form){
 }
 });
 
-// Permite abrir el modal con la informacion de una obra
+
+// Permite abrir el modal con la informacion de una obra para eliminar
+$('#dataDelete').on('show.bs.modal', function(event){
+
+	var este=$(this);
+  console.log('elimnar');	
+  var button=$(event.relatedTarget);
+	var id=button.data('id');
+
+	var modal = $('#dataDelete');
+
+  modal.find('#IDeliminar').val(id);	
+	
+});
+
+
+// Permite abrir el modal con la informacion de una obra para modificar
 $('#modalobra').on('show.bs.modal', function(event){
 
-	debugger
 	var este=$(this);
   console.log('actualizaa');
   var button=$(event.relatedTarget);
@@ -109,6 +124,7 @@ $('#modalobra').on('show.bs.modal', function(event){
 	modal.find('#iniobra').val(fechaini);
 	modal.find('#finobra').val(fechafin);
 });
+
 
 
 // Permite modificar una obra
@@ -141,7 +157,7 @@ submitHandler: function(form){
 });
 
 // permite registrar una obra
-$('#registrarobra').validate({
+$('#registrarObra').validate({
 	rules:{
 		nameobra :{required:true},
 		inicioobra:{required:true},
@@ -154,7 +170,7 @@ $('#registrarobra').validate({
 		finalobra: "Fecha Vacia",
 	},
 submitHandler: function(form){
-	var formulario = $('#registrarobra');	
+	var formulario = $('#registrarObra');	
 	console.log('llegamos a registrar');
  $.ajax({
 	url: formulario.attr('action'),
@@ -163,7 +179,29 @@ submitHandler: function(form){
  success : function(data)
 	 {
 			$('#div_ajax_registro').html(data);
+			$('#nameobra').val('')
+			$('#inicioobra').val('')
+			$('#finalobra').val('')
 	 }
   });
  }
 });
+
+// eliminar una obra
+$( "#eliminarObra").submit(function( event )
+	 {
+		debugger
+		var parametros = $('#eliminarObra').serialize();
+			 $.ajax({
+					type: "POST",
+					url: $('#eliminarObra').attr('action'),
+					data: parametros,
+					success: function(datos){
+					$(".div_ajax_delete").html(datos);
+
+					$('#dataDelete').modal('hide');
+				  }
+			});
+		});
+
+
