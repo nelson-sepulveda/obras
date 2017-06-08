@@ -350,6 +350,58 @@ submitHandler: function(form){
  }
 });
 
+/////////////////////////////////////////////////////////
+//////////// Termina CRUD sobre los proveedores del sistema
+/////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////////////////
+//////////// CRUD sobre los empleados del sistema
+/////////////////////////////////////////////////////////
+
+$('#registrarEmpleadoForm').validate({
+	rules:{
+		codigoempleado:{required:true},
+		nameempleado :{required:true},
+		apellidoemp:{required:true},
+		cedulaemp:{required:true },
+		fechanac:{required:true},
+		salarioemp:{required:true},
+		emailemp:{required:true, email:true}
+	},
+	messages:
+	{
+		codigoempleado:"Codigo Vacio",
+		nameempleado :"Nombre Vacio",
+		apellidoemp:"NIT vacio",
+		cedulaemp:"Telefono vacio",
+		fechanac:"Direccion vacia",
+		salarioemp:" Salario Vacio",
+    emailemp:"email vacio"
+	},
+submitHandler: function(form){
+	var formulario = $('#registrarEmpleadoForm');	
+	console.log('llegamos a registrarmee emp');
+ $.ajax({
+	url: formulario.attr('action'),
+	method:'post',
+	data:formulario.serialize(),
+ success : function(data)
+	 {
+			$('#div_ajax_registro_emp').html(data);
+			$('#codigoempleado').val('')
+			$('#nameempleado').val('')
+			$('#apellidoemp').val('')
+			$('#cedulaemp').val('')
+			$('#fechanac').val('')
+			$('#emailemp').val('')
+	 }
+  });
+ }
+});
 
 
 

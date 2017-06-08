@@ -11,27 +11,31 @@ $con=@mysqli_connect('localhost', 'root', '', 'obras');
       die("Connect failed: ".mysqli_connect_errno()." : ". mysqli_connect_error());
   }
 
- $max_id = "SELECT MAX(id_proveedor) AS id FROM PROVEEDOR"; 
- $consulta = mysqli_query($con,$max_id);
- $vec = mysqli_fetch_row($consulta);
- $var = (int)$vec[0];
- $ID = $var+1000;
- $nombre = $_POST['nameproveedor'];
- $nit = $_POST['nitprovee'];
- $telefono = $_POST['telefonopro'];
- $direccion = $_POST['direccionpro'];
 
- $sql_insert_pro = "INSERT INTO PROVEEDOR (id_proveedor,nit,nombre,telefono,direccion) VALUES ('$ID','$nit','$nombre','$telefono','$direccion')";
+  $id_personal = $_POST['codigoempleado'];
+  $ID_jefe = $_POST['id_admin'];
+  $nombre = $_POST['nameempleado'];
+  $apellido = $_POST['apellidoemp'];
+  $cedula = $_POST['cedulaemp'];
+  $fecha = $_POST['fechanac'];
+  $salario = $_POST['salarioemp'];
+  $email = $_POST['emailemp'];
+  $obra= $_POST['obra'];
 
- $query_exit= mysqli_query($con,$sql_insert_pro);
+  $id_obra = $obra[0];
 
- if($query_exit)
+
+  $sql = "INSERT INTO PERSONAL (id_personal,nombre,apellido,cedula,fecha_nac,salario,correo,id_obra,jefe) VALUES('$id_personal','$nombre','$apellido','$cedula','$fecha','$salario','$email','$id_obra','$ID_jefe')";
+
+  $query_inser = mysqli_query($con,$sql);
+
+  if($query_inser)
       {
-        $msg[]="Se registro Correctamente el proveedor";
+        $msg[]="Se registro Correctamente el empleado a la obra";
       }
       else
       {
-        $errors[]="No se registro de forma correcta el proveedor" . mysqli_error($con);
+        $errors[]="No se registro de forma correcta el empleado" . mysqli_error($con);
       }
 
   if (isset($errors))

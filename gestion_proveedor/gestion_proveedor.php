@@ -72,7 +72,6 @@
                              <li><a href="#" data-toggle="modal" data-target="">Editar Perfil</a></li>
                              <li><a href="../gestion/gestionar_obras.php">Gestionar Obras</a></li>
                              <li><a href="gestion_proveedor.php">Gestionar Proveedor</a></li>
-                             <li><a href="">Gestionar empleados</a></li>
                              <li><a href="">Salir</a></li>
                             </ul>
                         </li>
@@ -83,7 +82,7 @@
                             <ul class="submenu-hijo2" style="display:none;">
                              <li><a href=""data-toggle="modal" data-target="#registrarobra">Registrar Obra</a></li>
                              <li><a href="" data-toggle="modal" data-target="#registrarProveedorModal">Registrar Proveedor</a></li>
-                             <li><a href="">Registrar Empleado</a></li>
+                             <li><a href="" data-toggle="modal" data-target="#registrarEmpleado">Registrar Empleado</a></li>
                             </ul>
                         </li>
                                 
@@ -93,11 +92,12 @@
                     </div>  <!--end container -->
                 </nav>
             </header><!--/-->
-
+            <?php include('../obras/obras_admin.php'); ?>
             <?php include('../modal/registrar_proveedor.php'); ?>
             <?php include('../modal/registrar_obra.php'); ?>  
             <?php include('../modal/modificar_proveedor.php'); ?>
             <?php include('../modal/eliminar_proveedor.php'); ?>
+            <?php include('../modal/registrar_empleado.php'); ?>
             <!--home section-->
 
 

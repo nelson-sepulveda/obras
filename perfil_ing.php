@@ -76,16 +76,6 @@
                              <li><a href="">Salir</a></li>
                             </ul>
                         </li>
-                        <li class="registro-display">
-                             <a class=".perfil2"  href="#" style="">Registros!
-                             <i class="caret"></i>
-                             </a>
-                            <ul class="submenu-hijo2" style="display:none;">
-                             <li><a href=""data-toggle="modal" data-target="#registrarobra">Registrar Obra</a></li>
-                             <li><a href="" data-toggle="modal" data-target="#registrarProveedorModal">Registrar Proveedor</a></li>
-                             <li><a href="" data-toggle="" data-target="#">Registrar Empleado</a></li>
-                            </ul>
-                        </li>
                                 <li><a href="#contact">Contactanos</a></li>
                             </ul>
                         </div>  <!--end collapse -->
@@ -93,8 +83,11 @@
                 </nav>
             </header><!--/-->
 
+            <!--<?php include('obras/obras_admin.php'); ?>
             <?php include('modal/registrar_obra.php'); ?>
             <?php include('modal/registrar_proveedor.php'); ?>
+            <?php include('modal/registrar_empleado.php'); ?>-->
+
             <!--home section-->
 
 

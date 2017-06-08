@@ -11,7 +11,8 @@ $con=@mysqli_connect('localhost', 'root', '', 'obras');
         die("Connect failed: ".mysqli_connect_errno()." : ". mysqli_connect_error());
     }
 
-   $sql="SELECT * FROM OBRA"; 
+   $ID = $_SESSION['id_administrador'];  
+   $sql="SELECT obra.id_obra,obra.nombre,obra.fecha_inicio,obra.fecha_fin FROM ADMINISTRADOR INNER JOIN obra_x_admin on administrador.id_administrador= obra_x_admin.id_admin inner join obra on obra_x_admin.id_obra=obra.id_obra WHERE administrador.id_administrador='$ID'"; 
 
    $query = mysqli_query($con,$sql);
    
@@ -54,6 +55,7 @@ $con=@mysqli_connect('localhost', 'root', '', 'obras');
     <td>
         <button type="button" id="btnActualizar" data-toggle="modal" data-target="#modalobra" class="btn btn-info" data-id="<?php echo $row[0];?>" data-nombre="<?php echo $row[1];?>" data-fechaini="<?php echo $row[2]; ?>" data-fechafin="<?php echo $row[3];?>"><i class='glyphicon glyphicon-edit'></i> Modificar </button>
         <button type="button" id="btnEliminar" data-toggle="modal" data-target="#dataDelete"class="btn btn-danger" data-id="<?php echo $row[0];?>"><i class='glyphicon glyphicon-trash'></i>Eliminar</button>
+        <button type="button" id="" class="btn btn-default" data-toggle="modal" data-target=""   >Administrar</button>
       </td>
      </tr>
     <?php

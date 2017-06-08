@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 $con=@mysqli_connect('localhost', 'root', '', 'obras');
 
   if(!$con)
@@ -18,14 +19,18 @@ $con=@mysqli_connect('localhost', 'root', '', 'obras');
   $consulta = mysqli_query($con,$auto_inc);
   $vec = mysqli_fetch_row($consulta);
   $var= (int)$vec[0];
+  $salario = rand(100000,30000000);
 
   $ID = $var+1;
+  $ID_ADMIN = $_SESSION['id_administrador'];
 
   $sql_insert = "INSERT INTO OBRA (id_obra,nombre,fecha_inicio,fecha_fin) VALUES ('$ID','$nombre','$fechaini','$fechafin')";
+  $slq_insert_admin_obra = "INSERT INTO obra_x_admin (id_obra,id_admin,salario_admin) VALUES ('$ID','$ID_ADMIN','$salario')";
 
   $query_insert = mysqli_query($con,$sql_insert);
+  $query_admin_obra = mysqli_query($con,$slq_insert_admin_obra);
 
-  if($query_insert)
+  if($query_insert && $query_admin_obra)
       {
         $msg[]="Se registro Correctamente la obra";
       }
