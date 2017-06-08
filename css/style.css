@@ -3394,3 +3394,26 @@ footer
         page-break-after: avoid;
     }
 }
+
+.submenu-hijo {
+    display: block;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(204, 204, 204);
+    padding: 10px 20px 10px 10px;
+    border-radius: 5px;
+    width: 128px;
+  }
+
+  .scroll-nav .submenu-hijo {
+    background-color: rgba(255, 255, 255, 1);
+  }
+
+  .submenu-hijo li {
+    padding: 5px 0;
+  }
+  .submenu-hijo a {
+    color: #272727;
+    padding: 0;
+  }
+
