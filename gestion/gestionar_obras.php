@@ -64,20 +64,29 @@
 
                             <ul class="nav navbar-nav navbar-right">
                                    <li><a href="../perfil_ing.php">Inicio</a></li>
-                            <li class="nombre-perfil">
+                           <li class="nombre-perfil">
                              <a class=".perfil"  href="#" style=""><?php echo $_SESSION['nombre']; ?>
                              <i class="caret"></i>
                              </a>
                             <ul class="submenu-hijo" style="display:none;">
                              <li><a href="#" data-toggle="modal" data-target="">Editar Perfil</a></li>
-                             <li><a href=""data-toggle="modal" data-target="#registrarobra">Registrar Obra</a></li>
-                             <li><a href="">Gestionar Obras</a></li>
-                             <li><a href="">Gestionar Proveedor</a></li>
+                             <li><a href="../gestion/gestionar_obras.php">Gestionar Obras</a></li>
+                             <li><a href="../gestion_proveedor/gestion_proveedor.php">Gestionar Proveedor</a></li>
                              <li><a href="">Gestionar empleados</a></li>
                              <li><a href="">Salir</a></li>
                             </ul>
                         </li>
-                                
+                        <li class="registro-display">
+                             <a class=".perfil2"  href="#" style="">Registros!
+                             <i class="caret"></i>
+                             </a>
+                            <ul class="submenu-hijo2" style="display:none;">
+                             <li><a href=""data-toggle="modal" data-target="#registrarobra">Registrar Obra</a></li>
+                             <li><a href="" data-toggle="modal" data-target="#registrarProveedorModal">Registrar Proveedor</a></li>
+                             <li><a href="">Registrar Empleado</a></li>
+                            </ul>
+                        </li>
+                                 
                                 <li><a href="#contact">Contactanos</a></li>
                             </ul>
                         </div>  <!--end collapse -->
@@ -88,6 +97,7 @@
             <?php include('../modal/modificar_obra.php'); ?>
             <?php include('../modal/registrar_obra.php'); ?>
             <?php include('../modal/eliminar_obra.php'); ?> 
+            <?php include('../modal/registrar_proveedor.php'); ?>
 
             <!--home section-->
 

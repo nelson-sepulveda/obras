@@ -3395,7 +3395,7 @@ footer
     }
 }
 
-.submenu-hijo {
+.submenu-hijo , .submenu-hijo2 {
     display: block;
     position: absolute;
     background-color: rgb(255, 255, 255);
@@ -3409,6 +3409,12 @@ footer
     background-color: rgba(255, 255, 255, 1);
   }
 
+  .scroll-nav .submenu-hijo2 {
+    background-color: rgba(255, 255, 255, 1);
+  }
+
+  
+
   .submenu-hijo li {
     padding: 5px 0;
   }
@@ -3417,3 +3423,11 @@ footer
     padding: 0;
   }
 
+  .submenu-hijo2 li {
+    padding: 5px 0;
+  }
+  .submenu-hijo2 a {
+    color: #272727;
+    padding: 0;
+  }
+  

@@ -1,4 +1,14 @@
 
+
+
+$(document).ready(function()
+{
+	$('.registro-display').on('click', function()
+	{
+		$('.submenu-hijo2').slideToggle('slow');
+	});
+});
+
 $(document).ready(function()
 {
 	$('.nombre-perfil').on('click', function()
@@ -6,6 +16,10 @@ $(document).ready(function()
 		$('.submenu-hijo').slideToggle('slow');
 	});
 });
+
+/////////////////////////////////////////////////////////
+//////////// Registro y login de un usuario en el sistema
+/////////////////////////////////////////////////////////
 
 $('#registroIng').validate({
 	rules:{
@@ -85,6 +99,20 @@ submitHandler: function(form){
 });
 }
 });
+/////////////////////////////////////////////////////////
+//////////// termina Registro y login de un usuario en el sistema
+/////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////
+//////////// CRUD sobre las obras del sistema
+/////////////////////////////////////////////////////////
+
 
 
 // Permite abrir el modal con la informacion de una obra para eliminar
@@ -203,5 +231,128 @@ $( "#eliminarObra").submit(function( event )
 				  }
 			});
 		});
+
+
+/////////////////////////////////////////////////////////
+//////////// Termina CRUD sobre las obras del sistema
+/////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+/////////////////////////////////////////////////////////
+//////////// CRUD sobre los proveedores del sistema
+/////////////////////////////////////////////////////////
+
+// Permite modificar un proveedor del sistema
+$('#modalproveedor').on('show.bs.modal', function(event){
+
+	var este=$(this);
+  console.log('proveedor');
+  var button=$(event.relatedTarget);
+	var id=button.data('id');
+	var nombre = button.data('nombre');
+	var telefono = button.data('telefono');
+	var direccion = button.data('direccion');
+	var nit = button.data('nit');
+
+	console.log(nombre);
+	
+
+	var modal = $('#modalproveedor')	;
+
+  modal.find('#IDproveedor').val(id);	
+	modal.find('#nombreproveedor').val(nombre);
+	modal.find('#nitproveedor').val(nit);
+	modal.find('#telefonoproveedor').val(telefono);
+	modal.find('#direccionproveedor').val(direccion);
+});
+
+$('#modificarProveedor').validate({
+	rules:{
+		nombreproveedor :{required:true},
+		nitproveedor:{required:true},
+		telefonoproveedor:{required:true },
+		direccionproveedor:{required:true},
+	},
+	messages:
+	{
+		nombreproveedor :"Nombre Vacio",
+		nitproveedor:"NIT vacio",
+		telefonoproveedor:"Telefono vacio",
+		direccionproveedor:"Direccion vacia",
+	},
+submitHandler: function(form){
+	var formulario = $('#modificarProveedor');	
+	console.log('llegamos a modificar');
+ $.ajax({
+	url: formulario.attr('action'),
+	method:'post',
+	data:formulario.serialize(),
+ success : function(data)
+	 {
+			$('#div_ajax_update_pro').html(data);
+	 }
+  });
+ }
+});
+
+// Permite abrir el modal para eliminar un proveedor
+$('#deleteProveedor').on('show.bs.modal', function(event){
+
+	var este=$(this);
+  console.log('elimnar');	
+  var button=$(event.relatedTarget);
+	var id=button.data('id');
+
+	var modal = $('#deleteProveedor');
+
+  modal.find('#IDeliminarPro').val(id);	
+	
+});
+
+
+// Permite registrar un proveedor en el sistema
+$('#registrarProveedor').validate({
+	rules:{
+		nameproveedor :{required:true},
+		nitprovee:{required:true},
+		telefonopro:{required:true },
+		direccionpro:{required:true},
+	},
+	messages:
+	{
+		nameproveedor :"Nombre Vacio",
+		nitprovee:"NIT vacio",
+		telefonopro:"Telefono vacio",
+		direccionpro:"Direccion vacia",
+	},
+submitHandler: function(form){
+	var formulario = $('#registrarProveedor');	
+	console.log('llegamos a registrarmee');
+ $.ajax({
+	url: formulario.attr('action'),
+	method:'post',
+	data:formulario.serialize(),
+ success : function(data)
+	 {
+			$('#div_ajax_registro_pro').html(data);
+			$('#nameproveedor').val('')
+			$('#nitprovee').val('')
+			$('#telefonopro').val('')
+			$('#direccionpro').val('')
+	 }
+  });
+ }
+});
+
+
+
+
+
 
 
