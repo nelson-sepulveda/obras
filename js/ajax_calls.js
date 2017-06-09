@@ -405,6 +405,117 @@ submitHandler: function(form){
 
 
 
+// Modal para administrar Obra
+$('#administrar_obra').on('show.bs.modal', function(event){
+
+	var este=$(this);
+  console.log('admiiiiiin');	
+  var button=$(event.relatedTarget);
+	var id=button.data('id');	
+	var nombre = button.data('nombre');
+
+	$('#nombre_obra').html(nombre);
+	var modal = $('#administrar_obra');
+	modal.find('#IDOBRA').val(id)
+});
+
+
+
+$('#modalSuministro').on('show.bs.modal', function(event){
+
+	var este=$(this);
+  console.log('sumiiiin');	
+  var button=$(event.relatedTarget);
+	var id=button.data('id');	
+
+	var modal = $('#modalSuministro');
+	modal.find('#idPro').val(id)
+});
+
+
+// permite agregar un suministro
+$('#suministroForm').validate({
+	rules:{
+		nombresuministro:{required:true},
+		descripcionsum :{required:true},
+		precio:{required:true}
+	},
+	messages:
+	{
+		nombresuministro:"Nombre Vacio",
+		descripcionsum :"Descripcion Vacio",
+		precio:"Precio Vacio",
+	},
+submitHandler: function(form){
+	var formulario = $('#suministroForm');	
+	console.log('llegamos a sumiiiii');
+ $.ajax({
+	url: formulario.attr('action'),
+	method:'post',
+	data:formulario.serialize(),
+ success : function(data)
+	 {
+			$('#div_ajax_registro_sum').html(data);
+			$('#nombresuministro').val('')
+			$('#descripcionsum').val('')
+			$('#precio').val('')
+			$('#medida').val('')
+	 }
+  });
+ }
+});
+
+
+$('#obra_admin').validate({
+	rules:{
+		cantidadped:{required:true},
+		fechaped :{required:true},
+	},
+	messages:
+	{
+		cantidadped:"Cantidad Vacio",
+		fechaped :"Fecha Vacio",
+	},
+submitHandler: function(form){
+	var formulario = $('#obra_admin');	
+	console.log('llegamos a sumiiiii');
+ $.ajax({
+	url: formulario.attr('action'),
+	method:'post',
+	data:formulario.serialize(),
+ success : function(data)
+	 {
+			$('#div_ajax_suministro_obra').html(data);
+			$('#cantidadped').val('')
+			$('#fechaped').val('')
+	}
+  });
+ }
+});
+
+$('#generarpdf').validate({
+	rules:{
+		loca:{required:true},
+	},
+	messages:
+	{
+		loca:"akwdadhakj",
+	},
+submitHandler: function(form){
+	var formulario = $('#generarpdf');	
+	console.log('llegamos a generar');
+ $.ajax({
+	url: formulario.attr('action'),
+	method:'post',
+	data:formulario.serialize(),
+ success : function(data)
+	  {
+			$('#dive').html(data)	
+		}
+  });
+ }
+});
+
 
 
 

@@ -98,6 +98,7 @@
             <?php include('../modal/modificar_proveedor.php'); ?>
             <?php include('../modal/eliminar_proveedor.php'); ?>
             <?php include('../modal/registrar_empleado.php'); ?>
+            <?php include('../modal/modal_suministro.php'); ?>
             <!--home section-->
 
 

@@ -99,6 +99,8 @@
             <?php include('../modal/eliminar_obra.php'); ?> 
             <?php include('../modal/registrar_proveedor.php'); ?>
             <?php include('../modal/registrar_empleado.php'); ?>
+            <?php include('../modal/admin_obra.php'); ?>
+            <?php include('../modal/generar_pdf.php'); ?>
             <!--home section-->
 
 

@@ -55,7 +55,8 @@ $con=@mysqli_connect('localhost', 'root', '', 'obras');
     <td>
         <button type="button" id="btnActualizar" data-toggle="modal" data-target="#modalobra" class="btn btn-info" data-id="<?php echo $row[0];?>" data-nombre="<?php echo $row[1];?>" data-fechaini="<?php echo $row[2]; ?>" data-fechafin="<?php echo $row[3];?>"><i class='glyphicon glyphicon-edit'></i> Modificar </button>
         <button type="button" id="btnEliminar" data-toggle="modal" data-target="#dataDelete"class="btn btn-danger" data-id="<?php echo $row[0];?>"><i class='glyphicon glyphicon-trash'></i>Eliminar</button>
-        <button type="button" id="" class="btn btn-default" data-toggle="modal" data-target=""   >Administrar</button>
+        <button type="button" id="administrar" class="btn btn-default" data-toggle="modal" data-target="#administrar_obra" data-id="<?php printf($row[0]); ?>"  data-nombre="<?php printf($row[1]); ?>">Administrar</button>
+        <button type="button" id="reporte" class="btn btn-default" href="generar_pdf_obra.php">Generar reporte</button>  
       </td>
      </tr>
     <?php

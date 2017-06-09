@@ -55,6 +55,7 @@ $con=@mysqli_connect('localhost', 'root', '', 'obras');
     <td>
         <button type="button" id="btnActualizar" data-toggle="modal" data-target="#modalproveedor" class="btn btn-info" data-id="<?php echo $row[0];?>" data-nombre="<?php echo $row[2];?>" data-telefono="<?php echo $row[3]; ?>" data-direccion="<?php echo $row[4];?>" data-nit="<?php echo $row[1];?>"><i class='glyphicon glyphicon-edit'></i> Modificar </button>
         <button type="button" id="btnEliminar" data-toggle="modal" data-target="#deleteProveedor"class="btn btn-danger" data-id="<?php echo $row[0];?>"><i class='glyphicon glyphicon-trash'></i>Eliminar</button>
+        <button type="button" id="agregar" class="btn btn-default" data-id="<?php echo $row[0];?>" data-toggle="modal" data-target="#modalSuministro">Agregar Suministro</button>
       </td>
      </tr>
     <?php
