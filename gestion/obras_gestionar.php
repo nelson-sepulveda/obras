@@ -56,7 +56,11 @@ $con=@mysqli_connect('localhost', 'root', '', 'obras');
         <button type="button" id="btnActualizar" data-toggle="modal" data-target="#modalobra" class="btn btn-info" data-id="<?php echo $row[0];?>" data-nombre="<?php echo $row[1];?>" data-fechaini="<?php echo $row[2]; ?>" data-fechafin="<?php echo $row[3];?>"><i class='glyphicon glyphicon-edit'></i> Modificar </button>
         <button type="button" id="btnEliminar" data-toggle="modal" data-target="#dataDelete"class="btn btn-danger" data-id="<?php echo $row[0];?>"><i class='glyphicon glyphicon-trash'></i>Eliminar</button>
         <button type="button" id="administrar" class="btn btn-default" data-toggle="modal" data-target="#administrar_obra" data-id="<?php printf($row[0]); ?>"  data-nombre="<?php printf($row[1]); ?>">Administrar</button>
-        <button type="button" id="reporte" class="btn btn-default" href="generar_pdf_obra.php">Generar reporte</button>  
+          <form action="generar_pdf_obra.php" method="get" id="formReporte">
+           <input type="submit" name="submitreporte"class="btn btn-default" value="reporte"></input>
+           <input type="hidden" name="idObraPdf" value="<?php printf($row[0]); ?>">
+          </form>   
+          <!--<a href='generar_pdf_obra.php' target='_blank' class='demo'>[Demo]</a>-->
       </td>
      </tr>
     <?php

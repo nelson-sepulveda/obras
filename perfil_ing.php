@@ -64,6 +64,7 @@
 
                             <ul class="nav navbar-nav navbar-right">
                                    <li><a href="#home">Inicio</a></li>
+                                <li><a href="#contact">Contactanos</a></li>
                             <li class="nombre-perfil">
                              <a class=".perfil"  href="#" style=""><?php echo $_SESSION['nombre']; ?>
                              <i class="caret"></i>
@@ -76,7 +77,6 @@
                              <li><a href="">Salir</a></li>
                             </ul>
                         </li>
-                                <li><a href="#contact">Contactanos</a></li>
                             </ul>
                         </div>  <!--end collapse -->
                     </div>  <!--end container -->

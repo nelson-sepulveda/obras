@@ -52,14 +52,14 @@ submitHandler: function(form){
 			success : function(data)
 			{
 				$('#success').html(data); // cambiar los .val
-				// $('#user').val('')
-				// $('#email').val('')
-				// $('#direccion').val('')
-				// $('#telefono').val('')
-				// $('#cedula').val('')
-				// $('#password').val('')
-				// $('#password_re').val('')
-				// //$('#myModalRegistro').modal('hide')
+				$('#nombreing').val('')
+				$('#apellidoing').val('')
+				$('#email').val('')
+				$('#fecha').val('')
+				$('#cedula').val('')
+				$('#password').val('')
+				$('#password_re').val('')
+				$('#myModalRegistro').modal('hide')
 			}
 		});
  }
@@ -492,30 +492,5 @@ submitHandler: function(form){
   });
  }
 });
-
-$('#generarpdf').validate({
-	rules:{
-		loca:{required:true},
-	},
-	messages:
-	{
-		loca:"akwdadhakj",
-	},
-submitHandler: function(form){
-	var formulario = $('#generarpdf');	
-	console.log('llegamos a generar');
- $.ajax({
-	url: formulario.attr('action'),
-	method:'post',
-	data:formulario.serialize(),
- success : function(data)
-	  {
-			$('#dive').html(data)	
-		}
-  });
- }
-});
-
-
 
 
