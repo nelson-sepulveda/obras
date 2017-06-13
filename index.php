@@ -159,7 +159,8 @@
                    
                     <div class="col-sm-6">
                         <div class="additional-links editContent">
-                            Todos los derechos reservados 2017
+                            Universidad Francisco de Paula Santander<br>
+                            Todos los derechos reservados <br>2017
                             <!--<a href="#">Privacy Policy</a> | <a href="#">Terms</a> -->
                         </div>
                     </div>

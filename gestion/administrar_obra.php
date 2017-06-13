@@ -135,16 +135,15 @@
                         <!--  Heading-->
                         <div class="heading wow fadeIn animated" data-wow-offset="120" data-wow-duration="1.5s">
                             <div class="title text-center"><h1>Gestion de Obra</h1></div>
-                            <div class="subtitle text-center "><h5>Tenemos las mejores obras para el manejo de las mismas</h5></div>
+                            <div class="subtitle text-center "><h5>Obten todos los datos de la obra</h5></div>
                             <div class="separator text-center"></div>
                         </div>  
                                            
-                        <div class="col-sm-6 clearfix">
+                    <?php include('get_datos_obra.php'); ?> 
+                        <!--<div class="col-sm-6 clearfix">
                             <div class="feature wow fadeInLeft animated" data-wow-offset="120" data-wow-duration="1.5s">
-                                <!--<i class="fa fa-dollar"></i>-->
-                                <h4 class="text-white">Datos de la obra</h4>
+                                <!--<i class="fa fa-dollar"></i>
                                 <p class="text-white">
-                                    <?php include('get_datos_obra.php'); ?> 
                                     
                                 </p>
                                 <p class="text-white">
@@ -153,38 +152,38 @@
                                 <p class="text-white">
                                     
                                 </p>
-                            </div><!--end feature-->
-                        </div>
-
+                            </div><!--end feature
+                        </div>-->
+<!--
                         <div class="col-sm-6 clearfix">
                             <div class="feature wow fadeInRight animated" data-wow-offset="120" data-wow-duration="1.5s">
-                                <!--<i class="fa fa-line-chart"></i>-->
+                                <!--<i class="fa fa-line-chart"></i>
                                 <h4 class="text-white"></h4>
                                 <p class="text-white">
-                                    
+                                    <!--Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labor.
                                 </p>
-                            </div><!--end feature-->
+                            </div><!--end feature
                             
-                        </div>
+                        </div>-->
 
-                        <div class="col-sm-6 clearfix">
+                        <!--<div class="col-sm-6 clearfix">
                            <!-- <div class="feature margin-top-thirty wow fadeInLeft animated" data-wow-offset="120" data-wow-duration="1.5s">
                                 <i class="fa fa-legal"></i>
                                 <h4 class="text-white">Registra tu obra</h4>
                                 <p class="text-white">
                                     Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labor.
                                 </p>
-                            </div>-->
-                        </div>
-                        <div class="col-sm-6 clearfix">
+                            </div>
+                        </div>-->
+                        <!--<div class="col-sm-6 clearfix">-->
                           <!--  <div class="feature margin-top-thirty wow fadeInRight animated" data-wow-offset="120" data-wow-duration="1.5s">
                                 <i class="fa fa-legal"></i>
                                 <h4 class="text-white">Genera los reportes</h4>
                                 <p class="text-white">
                                     Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labor.
                                 </p>
-                            </div><!--end feature-->
-                        </div>
+                            </div><!--end feature
+                        </div>-->
 
                     </div><!--end row-->
                     
@@ -201,7 +200,8 @@
                    
                     <div class="col-sm-6">
                         <div class="additional-links editContent">
-                            Todos los derechos reservados 2017
+                            Universidad Francisco de Paula Santander<br>
+                            Todos los derechos reservados <br>2017
                             <!--<a href="#">Privacy Policy</a> | <a href="#">Terms</a> -->
                         </div>
                     </div>

@@ -66,13 +66,17 @@ $con=@mysqli_connect('localhost', 'root', '', 'obras');
 
   if($query_proveedores)
   {
+      ?><div class="feature wow fadeInRight animated" data-wow-offset="120" data-wow-duration="1.5s">
+                                <!--<i class="fa fa-line-chart"></i>-->
+     <h4 class="text-white">Proveedores de la Obra</h4>
+     <?php
       $total = mysqli_num_rows($query_proveedores);
       if($total==0){
        printf('<p class="text-white"> No se encontraron proveedores asignados a esta obra </p>');
       }
       else
       {
-        while($row = mysqli_fetch_row($query_proveedores))
+    while($row = mysqli_fetch_row($query_proveedores))
     {
      
       ?> 
@@ -96,16 +100,20 @@ $con=@mysqli_connect('localhost', 'root', '', 'obras');
   }
   else
   {
-    printf('<p class="text-white"> No se pudo conectar con la bases de datos </p>' . mysqli_error($con));  
+    printf('<p class="black-text"> No se pudo conectar con la bases de datos </p>' . mysqli_error($con));  
   }
 
   // Administradores
-  $sql_administradores = "select oa.id_obra as \"ID obra\", oa.id_admin as \"ID administrador\", \n". "concat(a.nombre,\" \", a.apellido) as \"Nombre\" \n" . "from obra_x_admin oa \n". "inner join administrador a on (oa.id_admin=a.id_administrador) \n". "where id_obra = 1";
+  $sql_administradores = "select oa.id_obra as \"ID obra\", oa.id_admin as \"ID administrador\", \n". "concat(a.nombre,\" \", a.apellido) as \"Nombre\" \n" . "from obra_x_admin oa \n". "inner join administrador a on (oa.id_admin=a.id_administrador) \n". "where id_obra = '$get'";
 
   $query_administradores = mysqli_query($con,$sql_administradores);
 
   if($query_administradores)
   {
+    ?><div class="feature wow fadeInLeft animated" data-wow-offset="120" data-wow-duration="1.5s">
+                                <!--<i class="fa fa-line-chart"></i>-->
+     <h4 class="text-white">Adminstradores de la Obra</h4>
+     <?php
     $total = mysqli_num_rows($query_administradores);
       if($total==0){
        printf('<p class="text-white"> No se encontraron Administradores asignados a esta obra </p>');
@@ -127,9 +135,7 @@ $con=@mysqli_connect('localhost', 'root', '', 'obras');
        <input type="submit" value="Reporte Administrador" class="btn btn-default"></input>
      </form>   
     <?php
-    ?>
-     </div><!--end feature-->
-    <?php
+    
     }
 
     
@@ -137,7 +143,9 @@ $con=@mysqli_connect('localhost', 'root', '', 'obras');
   else
   {
     printf('<p class="text-white"> No se pudo conectar con la bases de datos </p>' . mysqli_error($con));  
-  }
+  }?>
+     </div><!--end feature-->
+   <?php  
 
 
 
