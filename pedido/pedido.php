@@ -23,10 +23,12 @@ $con=@mysqli_connect('localhost', 'root', '', 'obras');
   $sum = $_POST['suminis'];
   $string = $sum[0];
 
+  echo $ID_obra;
 
   $split = explode("-",$string);
 
   $id_proveedor = $split[0];
+  echo $id_proveedor;
   $id_suministro = $split[1];
 
   $sql_pedido = "INSERT INTO PEDIDO(id_pedido,id_obra,id_proveedor,id_suministro,cantidad,fecha) VALUES('$id_last','$ID_obra','$id_proveedor','$id_suministro','$cantidad','$fecha')";
@@ -36,18 +38,19 @@ $con=@mysqli_connect('localhost', 'root', '', 'obras');
   $query_pedido=mysqli_query($con,$sql_pedido);
   $query_pro_obra = mysqli_query($con,$sql_pro_obra);
 
-  if($query_pedido)
-      {
-        if(!$query_pro_obra)
-        {
-            $msg[]="La obra ya cuenta con ese proveedor";
-        }
-          $msg[]="Se registro Correctamente el Pedido";
-      }
-      else
-      {
-        $errors[]="No se registro de forma correcta el pedido" . mysqli_error($con);
-      }
+  if($query_pedido && $query_pro_obra)
+    {
+      $msg[] ="se registro bien";
+      // if(!$query_pro_obra)
+      // {
+      //   $msg[]="La obra ya cuenta con ese proveedor";
+      // }
+      //   $msg[]="Se registro Correctamente el Pedido";
+    }
+    else
+    {
+     $errors[]="No se registro de forma correcta el pedido" . mysqli_error($con);
+    }
 
   if (isset($errors))
   {

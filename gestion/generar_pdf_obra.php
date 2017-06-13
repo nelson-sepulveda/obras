@@ -1,6 +1,17 @@
 <?php
 
   require('../fpdf181/fpdf.php');
+
+  $con=@mysqli_connect('localhost', 'root', '', 'obras');
+
+  if(!$con)
+  {
+      die("imposible conectarse: ".mysqli_error($con));
+  }
+  if (@mysqli_connect_errno())
+  {
+      die("Connect failed: ".mysqli_connect_errno()." : ". mysqli_connect_error());
+  }
  
   class PDF extends FPDF
 {
@@ -34,27 +45,31 @@
 if(isset($_GET['submitreporte']))
   {
 
-  $con=@mysqli_connect('localhost', 'root', '', 'obras');
-
-  if(!$con)
-  {
-      die("imposible conectarse: ".mysqli_error($con));
-  }
-  if (@mysqli_connect_errno())
-  {
-      die("Connect failed: ".mysqli_connect_errno()." : ". mysqli_connect_error());
-  }   
-
   $var = $_GET['idObraPdf'];
-  $sql ="SELECT  o.id_obra as ID_obra o.nombre as Nombre de la obra, o.fecha_inicio as Fecha de inicio, o.fecha_fin as Fecha de finalización, oa.id_admin as ID administrador, concat(a.nombre, '',a.apellido) as Nombre del administrador, oa.salario_admin as Salario del administrador, concat(pe.nombre, pe.apellido) as Nombre del empleado, op.id_proveedor as ID del proveedor, op.contrato as Contrato, p.nombre as Nombre del proveedor from obra o left join obra_x_admin oa on (o.id_obra = oa.id_obra) left join administrador a on (oa.id_admin = a.id_administrador) left join personal pe on (o.id_obra = pe.id_obra) left join obra_x_proveedor op on (o.id_obra = op.id_obra) left join proveedor p on (op.id_proveedor = p.id_proveedor) where o.id_obra='$var'";
+  echo $var;
+//   $sql2 = "SELECT * FROM OBRA";
+//   $sql ="SELECT  o.id_obra as ID_obra o.nombre as Nombre de la obra, o.fecha_inicio as Fecha de inicio, o.fecha_fin as Fecha de finalización, oa.id_admin as ID administrador, concat(a.nombre, '',a.apellido) as Nombre del administrador, oa.salario_admin as Salario del administrador, concat(pe.nombre, pe.apellido) as Nombre del empleado, op.id_proveedor as ID del proveedor, op.contrato as Contrato, p.nombre as Nombre del proveedor from obra o left join obra_x_admin oa on o.id_obra = oa.id_obra left join administrador a on oa.id_admin = a.id_administrador left join personal pe on o.id_obra = pe.id_obra left join obra_x_proveedor op on o.id_obra = op.id_obra left join proveedor p on op.id_proveedor = p.id_proveedor WHERE o.id_obra='$var'";
+  
+
+  $sql = "select o.id_obra as \"ID obra\", o.nombre as \"Nombre de la obra\", o.fecha_inicio as \"Fecha de inicio\", o.fecha_fin as \"Fecha de finalización\", oa.id_admin as \"ID administrador\", concat(a.nombre, \" \",a.apellido) as \"Nombre del administrador\", oa.salario_admin as \"Salario del administrador\", concat(pe.nombre, pe.apellido) as \"Nombre del empleado\", op.id_proveedor as \"ID del proveedor\", op.contrato as \"Contrato\", p.nombre as \"Nombre del proveedor\" from obra o left join obra_x_admin oa on (o.id_obra = oa.id_obra) left join administrador a on (oa.id_admin = a.id_administrador) left join personal pe on (o.id_obra = pe.id_obra) left join obra_x_proveedor op on (o.id_obra = op.id_obra) left join proveedor p on (op.id_proveedor = p.id_proveedor) where o.id_obra=7";
+
   $query = mysqli_query($con,$sql);
+  
+  
+  while($row = mysqli_fetch_row($query))
+  {
+    var_dump($row);
+  }
+  
 
 
-   $pdf = new FPDF();
-   $pdf->AddPage();
-   $pdf->SetFont('Arial','B',16);
-   $pdf->Cell(40,10,$var,0,1,'R');
-   $pdf->Output();    
+
+
+//    $pdf = new FPDF();
+//    $pdf->AddPage();
+//    $pdf->SetFont('Arial','B',16);
+//    $pdf->Cell(40,10,$var,0,1,'R');
+//    $pdf->Output();    
   
    } 
 

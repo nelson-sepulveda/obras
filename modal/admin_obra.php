@@ -13,7 +13,7 @@
       <div class="modal-body">
         <form id="obra_admin" method="post" action="../pedido/pedido.php">
           <div class="modal-body">
-              <input type="hidden" id="IDOBRA" name="IDOBRA">
+              <input type="hidden" id="IDOBRA" name="IDOBRA" value="">
               <div class="form-group">
                 <label for="nombre" class="control-label">Suministros:</label>
                 <select class="form-control" name="suminis[]">

@@ -408,11 +408,12 @@ submitHandler: function(form){
 // Modal para administrar Obra
 $('#administrar_obra').on('show.bs.modal', function(event){
 
+	debugger
 	var este=$(this);
-  console.log('admiiiiiin');	
   var button=$(event.relatedTarget);
 	var id=button.data('id');	
 	var nombre = button.data('nombre');
+  console.log(id);	
 
 	$('#nombre_obra').html(nombre);
 	var modal = $('#administrar_obra');
