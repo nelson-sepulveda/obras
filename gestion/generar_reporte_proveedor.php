@@ -53,10 +53,15 @@ class PDF extends FPDF
        
     }
     
-
 }
-$pdf = new PDF();
-$pdf->Output();  
+   $id = $_GET['idobraproveedores'];
+   $sql_proveedores = "SELECT obra_x_proveedor.id_obra, obra_x_proveedor.id_proveedor, proveedor.nombre FROM obra_x_proveedor INNER JOIN proveedor ON proveedor.id_proveedor=obra_x_proveedor.id_proveedor WHERE obra_x_proveedor.id_obra='$id'";
+   $query_proveedores = mysqli_query($con,$sql_proveedores);
+
+   
+   $pdf = new PDF();
+   $pdf->AddPage('P','Letter');
+   $pdf->Output();  
 
 
 ?>

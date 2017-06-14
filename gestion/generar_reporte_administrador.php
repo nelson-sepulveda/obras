@@ -65,7 +65,6 @@ class PDF extends FPDF
    $query_administrador = mysqli_query($con,$sql_admin);
    $datos_admin = mysqli_fetch_row($query_administrador);
 
-
     $pdf = new PDF();
     $pdf->AddPage('P','Letter');
     $pdf->Cell(40,40,'Listado de Administradores',0, 1 , ' L ');
