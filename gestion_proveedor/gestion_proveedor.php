@@ -57,7 +57,7 @@
                                 <span class="icon-bar"></span>
                             </button>
 
-                            <a href="index.html" class="navbar-brand top-logo"><img src="../images/logo.png" alt="logo"></a>
+                            <a href="../perfil_ing.php" class=""><h3 class="text-white" style="margin-top:20px;">SIGAOC</h3></a>
                         </div>  <!--end navbar-header -->
 
                         <div class="collapse navbar-collapse" id="navbar-collapse">

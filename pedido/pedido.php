@@ -1,6 +1,6 @@
 <?php
 
-$con=@mysqli_connect('localhost', 'root', '', 'obras');
+$con=@mysqli_connect('localhost', 'root', '', 'obra_civil');
 
   if(!$con)
   {
@@ -30,19 +30,18 @@ $con=@mysqli_connect('localhost', 'root', '', 'obras');
 
   $sql_pedido = "INSERT INTO PEDIDO(id_pedido,id_obra,id_proveedor,id_suministro,cantidad,fecha) VALUES('$id_last','$ID_obra','$id_proveedor','$id_suministro','$cantidad','$fecha')";
 
-  $sql_pro_obra = "INSERT INTO OBRA_X_PROVEEDOR (id_obra,id_proveedor) VALUES('$ID_obra',$id_proveedor)";
+  $sql_pro_obra = "INSERT INTO OBRA_X_PROVEEDOR (id_obra,id_proveedor) VALUES('$ID_obra','$id_proveedor')";
 
   $query_pedido=mysqli_query($con,$sql_pedido);
   $query_pro_obra = mysqli_query($con,$sql_pro_obra);
 
-  if($query_pedido && $query_pro_obra)
+  if($query_pedido)
     {
-      $msg[] ="se registro bien";
-      // if(!$query_pro_obra)
-      // {
-      //   $msg[]="La obra ya cuenta con ese proveedor";
-      // }
-      //   $msg[]="Se registro Correctamente el Pedido";
+      if(!$query_pro_obra)
+      {
+        //$msg[]="La obra ya cuenta con ese proveedor";
+      }
+        $msg[]="Se registro Correctamente el Pedido";
     }
     else
     {

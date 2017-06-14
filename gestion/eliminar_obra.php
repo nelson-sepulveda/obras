@@ -2,7 +2,7 @@
 
 
 
-$con=@mysqli_connect('localhost', 'root', '', 'obras');
+$con=@mysqli_connect('localhost', 'root', '', 'obra_civil');
 
   if(!$con)
   {
@@ -13,9 +13,10 @@ $con=@mysqli_connect('localhost', 'root', '', 'obras');
       die("Connect failed: ".mysqli_connect_errno()." : ". mysqli_connect_error());
   }
 
-  $ID = $_POST['IDeliminar'];
+	
+  // $ID = $_POST['IDeliminar'];
 
-  $dml_delete = "DELETE FROM OBRA WHERE id_obra='$ID'";
+  /*$dml_delete = "DELETE FROM OBRA WHERE id_obra='$ID'";
 
   $query_delete = mysqli_query($con,$dml_delete);
 
@@ -55,7 +56,7 @@ if ($query_delete){
 			}
 
   
-
+*/
 
 
   

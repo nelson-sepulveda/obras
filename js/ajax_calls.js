@@ -216,21 +216,21 @@ submitHandler: function(form){
 });
 
 // eliminar una obra
-$( "#eliminarObra").submit(function( event )
-	 {
-		debugger
-		var parametros = $('#eliminarObra').serialize();
-			 $.ajax({
-					type: "POST",
-					url: $('#eliminarObra').attr('action'),
-					data: parametros,
-					success: function(datos){
-					$(".div_ajax_delete").html(datos);
+// $("#eliminarObra").submit(function( event )
+// 	 {
+// 		debugger
+// 		var parametros = $('#eliminarObra').serialize();
+// 			 $.ajax({
+// 					type: "POST",
+// 					url: $('#eliminarObra').attr('action'),
+// 					data: parametros,
+// 					success: function(datos){
+// 					$(".div_ajax_delete").html(datos);
 
-					$('#dataDelete').modal('hide');
-				  }
-			});
-		});
+// 					$('#dataDelete').modal('hide');
+// 				  }
+// 			});
+// 		});
 
 
 /////////////////////////////////////////////////////////

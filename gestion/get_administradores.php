@@ -1,5 +1,5 @@
 <?php 
-  $con=@mysqli_connect('localhost', 'root', '', 'obras');
+  $con=@mysqli_connect('localhost', 'root', '', 'obra_civil');
 
   if(!$con)
   {

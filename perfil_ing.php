@@ -57,7 +57,7 @@
                                 <span class="icon-bar"></span>
                             </button>
 
-                            <a href="index.html" class="navbar-brand top-logo"><img src="images/logo.png" alt="logo"></a>
+                         <a href="perfil_ing.php" class=""><h3 class="text-white" style="margin-top:20px;">SIGAOC</h3></a>
                         </div>  <!--end navbar-header -->
 
                         <div class="collapse navbar-collapse" id="navbar-collapse">
@@ -135,7 +135,7 @@
                                 <h4 class="text-white">Tus Obras</h4>
                                 <p class="text-white">
                                     Podras conocer toda la informacion de los empleados
-                                    generando un reporte sobre ellos para tener un control sobre en las obras en las que trabajan, podras registrarlos a alguna de tus obras para así llevar un control de ellos
+                                    generando un reporte sobre ellos para tener un control sobre en las obras en las que trabajan.
                                 </p>
                             </div><!--end feature-->
                         </div>

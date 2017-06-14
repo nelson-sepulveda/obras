@@ -27,7 +27,7 @@
             </div>
           </div>  
           <div class="modal-footer">
-            <button type="submit" class="btn btn-primary" id="registrarpro">Registra Obra!</button>
+            <button type="submit" class="btn btn-primary" id="registrarpro">Registrar Proveedor!</button>
           </div>
       </form>
       </div>
