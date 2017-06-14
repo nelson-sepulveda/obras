@@ -74,7 +74,7 @@
                              <li><a href="gestion/gestionar_obras.php">Gestionar Obras</a></li>
                              <li><a href="gestion_proveedor/gestion_proveedor.php">Gestionar Proveedor</a></li>
                              <li><a href="">Gestionar empleados</a></li>
-                             <li><a href="">Salir</a></li>
+                             <li><a href="desconectar.php">Salir</a></li>
                             </ul>
                         </li>
                             </ul>
@@ -92,7 +92,11 @@
 
 
             <!-- if you like to use surface. change class="home" to class="surface"-->
-            <section id="home" class="home">
+            <section id="home" class="home" style="background: url(images/event.jpg) no-repeat center top fixed;
+            -moz-background-size:cover;
+            -moz-background-size:cover;
+            -webkit-background-size:cover;
+            -o-background-size:cover;">
 
                 <div class="overlay-startup">
 
@@ -101,8 +105,8 @@
                             <div class="col-md-10 col-md-offset-1">
                                 <div class="home-intro-subscribe">
                                     <!--Header text -->
-                                    <h1>Manejo de obras de construccion</h1>
-                                    <h3>Registra tus obras para poder tener un control sobre ellas, así no perderas la informacion nunca</h3>
+                                    <h1>Bienvenido!</h1>
+                                    <h3>Con nuestro software podras mantener tus obras ordenadas, genear reportes con ellas para tener tu informacion a la mano</h3>
                                 </div>
 
                             </div>

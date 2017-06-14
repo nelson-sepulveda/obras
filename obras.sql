@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-06-2017 a las 17:05:43
+-- Tiempo de generación: 14-06-2017 a las 06:01:35
 -- Versión del servidor: 10.1.13-MariaDB
 -- Versión de PHP: 5.6.21
 
@@ -45,7 +45,8 @@ INSERT INTO `administrador` (`id_administrador`, `nombre`, `apellido`, `cedula`,
 (200, 'Andres', 'Orduz', 1024785214, '1990-05-01', 'ingandres@gmail.com', '123'),
 (12344, 'Javier', 'Placencia', 12344, '1233-12-12', 'javier1@gmail.com', '1q2w3e4r'),
 (71637, 'Luis', 'awdh', 71637, '0000-00-00', 'nelsow_sv@hotmail.com', '123'),
-(123567, 'Carlos', 'Rubles', 123567, '2017-04-17', 'nelsons_sv@hotmail.com', 'pas123');
+(123567, 'Carlos', 'Rubles', 123567, '2017-04-17', 'nelsons_sv@hotmail.com', 'pas123'),
+(1150900, 'Pilar', 'Rodriguez', 60123456, '1990-05-01', 'adminobra', 'obracivil123');
 
 -- --------------------------------------------------------
 
@@ -187,6 +188,7 @@ INSERT INTO `personal` (`id_personal`, `nombre`, `apellido`, `cedula`, `fecha_na
 (1151414, 'Nelson', 'Vega', 8192819, '1998-08-31', 400000, 'rlis@gmial.com', 7, 123567),
 (1151455, 'Maria', 'Vargas', 10447, '1972-02-13', 2000000, 'maria@gmail.com', 1, 100),
 (1151457, 'Daniel', 'Sandoval', 2147483647, '1982-02-25', 4000000, 'daniel@gmail.com', 1, 100),
+(1151460, 'Carlos Andres', 'Arbelaez Ruiz', 2147483647, '1997-03-12', 100000, 'carlosruiz@gmail.com', 3, 100),
 (1151461, 'Alvaro', 'Uribe Velez', 25478524, '1960-04-24', 1500000, 'alvarito@hotmail.com', 1, 100),
 (1151462, 'Pablo', 'Calarca Jaimes', 15478254, '1980-02-05', 1350000, 'pablito7@hotmail.com', 1, 100),
 (1151463, 'Pablo', 'Galviz', 24587425, '1980-08-02', 1350000, 'pablitoconstruye@hotmail.com', 1, 100),

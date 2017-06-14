@@ -85,7 +85,7 @@
                              <li><a href="#" data-toggle="modal" data-target="">Editar Perfil</a></li>
                              <li><a href="../gestion/gestionar_obras.php">Gestionar Obras</a></li>
                              <li><a href="../gestion_proveedor/gestion_proveedor.php">Gestionar Proveedor</a></li>
-                             <li><a href="">Salir</a></li>
+                             <li><a href="../desconectar.php">Salir</a></li>
                             </ul>
                         </li>
                             </ul>

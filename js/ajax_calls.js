@@ -67,7 +67,7 @@ submitHandler: function(form){
 
 $('#loginData').validate({
 	rules:{
-		usuario :{required:true , email:true},
+		usuario :{required:true},
 		pass:{required:true },
 	},
 	messages:
