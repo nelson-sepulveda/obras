@@ -62,19 +62,8 @@
 
                         <div class="collapse navbar-collapse" id="navbar-collapse">
 
-                            <ul class="nav navbar-nav navbar-right">
-                                   <li><a href="../perfil_ing.php">Inicio</a></li>
-                            <li class="nombre-perfil">
-                             <a class=".perfil"  href="#" style=""><?php echo $_SESSION['nombre']; ?>
-                             <i class="caret"></i>
-                             </a>
-                            <ul class="submenu-hijo" style="display:none;">
-                             <li><a href="#" data-toggle="modal" data-target="">Editar Perfil</a></li>
-                             <li><a href="../gestion/gestionar_obras.php">Gestionar Obras</a></li>
-                             <li><a href="gestion_proveedor.php">Gestionar Proveedor</a></li>
-                             <li><a href="">Salir</a></li>
-                            </ul>
-                        </li>
+                           <ul class="nav navbar-nav navbar-right">
+                            <li><a href="../perfil_ing.php">Inicio</a></li>
                         <li class="registro-display">
                              <a class=".perfil2"  href="#" style="">Registros!
                              <i class="caret"></i>
@@ -87,6 +76,17 @@
                         </li>
                                 
                                 <li><a href="#contact">Contactanos</a></li>
+                            <li class="nombre-perfil">
+                             <a class=".perfil"  href="#" style=""><?php echo $_SESSION['nombre']; ?>
+                             <i class="caret"></i>
+                             </a>
+                            <ul class="submenu-hijo" style="display:none;">
+                             <li><a href="#" data-toggle="modal" data-target="">Editar Perfil</a></li>
+                             <li><a href="../gestion/gestionar_obras.php">Gestionar Obras</a></li>
+                             <li><a href="gestion_proveedor.php">Gestionar Proveedor</a></li>
+                             <li><a href="">Salir</a></li>
+                            </ul>
+                        </li>
                             </ul>
                         </div>  <!--end collapse -->
                     </div>  <!--end container -->

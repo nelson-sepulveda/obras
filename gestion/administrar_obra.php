@@ -129,67 +129,78 @@
 
             <section id="service" class="sections">
                 <div class="container">
-                
                     <div class="row">
                         
                         <!--  Heading-->
                         <div class="heading wow fadeIn animated" data-wow-offset="120" data-wow-duration="1.5s">
-                            <div class="title text-center"><h1>Gestion de Obra</h1></div>
-                            <div class="subtitle text-center "><h5>Obten todos los datos de la obra</h5></div>
+                            <div class="title text-center"><h1>Como funcionamos</h1></div>
+                            <div class="subtitle text-center "><h5>Tenemos las mejores obras para el manejo de las mismas</h5></div>
                             <div class="separator text-center"></div>
-                        </div>  
-                                           
-                    <?php include('get_datos_obra.php'); ?> 
-                        <!--<div class="col-sm-6 clearfix">
+                        </div>
+                        
+                        <div class="col-sm-6 clearfix">
                             <div class="feature wow fadeInLeft animated" data-wow-offset="120" data-wow-duration="1.5s">
-                                <!--<i class="fa fa-dollar"></i>
+                                <i class="fa fa-legal"></i>
+                                <h4 class="text-white">Empleados</h4>
                                 <p class="text-white">
-                                    
+                                    Podras conocer toda la informacion de los empleados
+                                    generando un reporte sobre ellos para tener un control sobre en las obras en las que trabajan, podras registrarlos a alguna de tus obras para así llevar un control de ellos
                                 </p>
-                                <p class="text-white">
-                                    
-                                </p>
-                                <p class="text-white">
-                                    
-                                </p>
-                            </div><!--end feature
-                        </div>-->
-<!--
+                            </div><!--end feature-->
+                        </div>
+
                         <div class="col-sm-6 clearfix">
                             <div class="feature wow fadeInRight animated" data-wow-offset="120" data-wow-duration="1.5s">
-                                <!--<i class="fa fa-line-chart"></i>
-                                <h4 class="text-white"></h4>
+                                <i class="fa fa-line-chart"></i>
+                                <h4 class="text-white">Reporte General</h4>
                                 <p class="text-white">
-                                    <!--Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labor.
+                                    Podras obtener el reporte general de la obra, definiendo las informacion necesaria para poder sobre llevarla como sus fechas, su nombre, sus costos entre otros. Dando click en el boton
+                                    <form action="reporte_general.php" method="get" target="_blank">
+                                        <?php $get = $_GET['idObraPdf']; ?>
+                                        <input type="hidden" value="<?php echo $get; ?>" name="idobraadmin">
+                                        <input type="submit" value="Generar Reporte General" class="btn btn-default">
+                                    </form> 
                                 </p>
-                            </div><!--end feature
-                            
-                        </div>-->
+                            </div><!--end feature-->
+                        </div>
 
-                        <!--<div class="col-sm-6 clearfix">
-                           <!-- <div class="feature margin-top-thirty wow fadeInLeft animated" data-wow-offset="120" data-wow-duration="1.5s">
-                                <i class="fa fa-legal"></i>
-                                <h4 class="text-white">Registra tu obra</h4>
-                                <p class="text-white">
-                                    Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labor.
-                                </p>
-                            </div>
-                        </div>-->
-                        <!--<div class="col-sm-6 clearfix">-->
-                          <!--  <div class="feature margin-top-thirty wow fadeInRight animated" data-wow-offset="120" data-wow-duration="1.5s">
-                                <i class="fa fa-legal"></i>
-                                <h4 class="text-white">Genera los reportes</h4>
-                                <p class="text-white">
-                                    Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labor.
-                                </p>
-                            </div><!--end feature
-                        </div>-->
 
                     </div><!--end row-->
-                    
 
                 </div><!--end container-->
             </section><!--/-->
+
+           <!-- Service Section-->
+             <section id="service" class="sections">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="feature wow fadeInLeft animated" data-wow-offset="120" data-wow-duration="1.5s">
+                            <p>
+                                <?php include('get_empleados.php'); ?>
+                            </p>
+                        </div>
+                    </div><!--end 4 col-->
+
+                    <div class="col-sm-4">
+                        <div class="feature wow fadeIn animated" data-wow-offset="120" data-wow-duration="1.5s">
+                            <p>
+                                <?php include('get_proveedores.php'); ?>
+                            </p>
+                        </div>
+                    </div><!--end 4 col-->
+
+                    <div class="col-sm-4">
+                        <div class="feature wow fadeInRight animated" data-wow-offset="120" data-wow-duration="1.5s">
+                            <h4>Administradores de la Obra</h4>
+                            <p>
+                                <?php include('get_administradores.php'); ?> 
+                            </p>
+                        </div>
+                    </div><!--end 4 col-->
+                </div><!--end row-->
+            </div>
+        </section>
 
 
 

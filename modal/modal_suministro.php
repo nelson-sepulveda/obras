@@ -24,7 +24,7 @@
             </div>
             <div class="form-group">
                 <label for="nombre" class="control-label">unidad de medida:</label>
-                <input type="text" class="form-control" id="medida" name="medida"  placeholder="Digite descripcion">
+                <input type="text" class="form-control" id="medida" name="medida"  placeholder="Digite su medida">
             </div>
           </div>  
           <div class="modal-footer">

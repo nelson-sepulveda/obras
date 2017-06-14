@@ -1,5 +1,6 @@
 <?php 
 
+  session_start();  
   require('../fpdf181/fpdf.php');
 
   $con=@mysqli_connect('localhost', 'root', '', 'obras');
@@ -19,7 +20,7 @@ class PDF extends FPDF
     {
         $this->SetY(-40);
         $this->SetFont('Arial','I',8);
-        $this->Cell(0,10,'Universidad Francisco de Paula Santander','T',0,'L',$this->Image('../images/ufps.png',150,260,50));
+        $this->Cell(0,10,'Universidad Francisco de Paula Santander','T',0,'L',$this->Image('../images/ufps.png',150,242,50));
         $this->ln(3);
         $this->Cell(0,10,'Norte de Santander',0,'L');
         $this->ln(3);
@@ -35,7 +36,7 @@ class PDF extends FPDF
         $this->Line(10,10,206,10);
         $this->Line(10,35.5,206,35.5);
         $this->Cell(30,25,'',0,0,'C');//,$this->Image('', 152,12,19));
-        $this->Cell(90,25,'Reporte de Proveedores - Constructora',0,0,'R',$this->Image('../images/log.png',170,11,19));
+        $this->Cell(76,25,'Reporte de Proveedores - Constructora',0,0,'R',$this->Image('../images/log.png',170,11,19));
         //$this->Cell(40,25,'',0,0,'C',$this->Image('images/logoDerecha.png', 175, 12, 19));
         //Se da un salto de línea de 25
         $this->Ln(25);
@@ -47,7 +48,7 @@ class PDF extends FPDF
 
        while($row = mysqli_fetch_row($txt))
        {    
-            $fila = $row[1] . '  ' . $row[2] . ' '. $row[3] . ' '. $row[4] . ' ' .$row[5] . '  ' .$row[6];   
+            $fila = $row[1] . '  ' . $row[2] . '  '. $row[3] . '  '. $row[4] ;   
             $this->MultiCell(0,5,$fila); 
        }     
        
@@ -55,13 +56,28 @@ class PDF extends FPDF
     
 }
    $id = $_GET['idobraproveedores'];
-   $sql_proveedores = "SELECT obra_x_proveedor.id_obra, obra_x_proveedor.id_proveedor, proveedor.nombre FROM obra_x_proveedor INNER JOIN proveedor ON proveedor.id_proveedor=obra_x_proveedor.id_proveedor WHERE obra_x_proveedor.id_obra='$id'";
+   $session = $_SESSION['id_administrador'];
+
+   $sql_admin = "SELECT * FROM ADMINISTRADOR WHERE id_administrador='$session'";
+   $sql_proveedores = "SELECT obra_x_proveedor.id_obra, obra_x_proveedor.id_proveedor, proveedor.nombre, proveedor.telefono,proveedor.direccion FROM obra_x_proveedor INNER JOIN proveedor ON proveedor.id_proveedor=obra_x_proveedor.id_proveedor WHERE obra_x_proveedor.id_obra='$id'";
+
+   $query_administrador = mysqli_query($con,$sql_admin);
+   $datos_admin = mysqli_fetch_row($query_administrador);
    $query_proveedores = mysqli_query($con,$sql_proveedores);
 
-   
+
+
    $pdf = new PDF();
    $pdf->AddPage('P','Letter');
+   $pdf->Cell(40,40,'Listado de Proveedores',0, 1 , ' L ');
+   $pdf->get_content($query_proveedores);
+   $pdf->ln(25);
+    // $pdf->Cell(40,20,'Total Salarios: '.$dato[0],0,1,'L');
+   $pdf->ln(10);
+   $pdf->Cell(40,20,'Atentamente',0,1,'L');
+   $pdf->Cell(40,5,'Nombre: '.$datos_admin[1].' '.$datos_admin[2],0,1,'L');
+   $pdf->Cell(30,5,'Cedula: '.$datos_admin[3],0,1,'L');
+   $pdf->Cell(30,5,'Email: '.$datos_admin[5],0,1,'L');
    $pdf->Output();  
-
 
 ?>

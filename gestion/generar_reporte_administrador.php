@@ -7,7 +7,7 @@ class PDF extends FPDF
     {
         $this->SetY(-40);
         $this->SetFont('Arial','I',8);
-        $this->Cell(0,10,'Universidad Francisco de Paula Santander','T',0,'L',$this->Image('../images/ufps.png',150,260,50));
+        $this->Cell(0,10,'Universidad Francisco de Paula Santander','T',0,'L',$this->Image('../images/ufps.png',150,242,50));
         $this->ln(3);
         $this->Cell(0,10,'Norte de Santander',0,'L');
         $this->ln(3);
@@ -77,6 +77,5 @@ class PDF extends FPDF
     $pdf->Cell(30,5,'Cedula: '.$datos_admin[3],0,1,'L');
     $pdf->Cell(30,5,'Email: '.$datos_admin[5],0,1,'L');
     $pdf->Output();
-
 
 ?>
