@@ -218,6 +218,8 @@
                     </div>
                      <div class="col-sm-6">
                         <div class="social-btns pull-right">
+                            Angel Ortiz - 1151461 <br>
+                            Andrés Orduz 1150470
                             <!--<a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>
                             <a href="#"><i class="fa fa-google-plus"></i></a>

@@ -58,7 +58,7 @@ class PDF extends FPDF
    $id = $_GET['idobraadministrador'];
    $session = $_SESSION['id_administrador'];
 
-   $sql_administradores = "select oa.id_obra as \"ID obra\", oa.id_admin as \"ID administrador\", \n". "concat(a.nombre,\" \", a.apellido) as \"Nombre\" \n" . "from obra_x_admin oa \n". "inner join administrador a on (oa.id_admin=a.id_administrador) \n". "where id_obra = '$id'";
+   $sql_administradores = "select oa.id_obra as \"ID obra\", oa.id_admin as \"ID administrador\", \n". "concat(a.nombre,\" \", a.apellido) as \"Nombre\" \n" . "from obra_x_admin oa \n ". "inner join administrador a on (oa.id_admin=a.id_administrador) \n". "where id_obra = '$id'";
    $sql_admin = "SELECT * FROM ADMINISTRADOR WHERE id_administrador='$session'";
 
    $query_administradores = mysqli_query($con,$sql_administradores);

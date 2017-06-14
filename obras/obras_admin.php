@@ -28,7 +28,7 @@ function get_suministros_proveedor()
 {
     global $con;
 
-    $sql="SELECT proveedor.id_proveedor,suministro.id_suministro,suministro.descripcion,suministro.nombre FROM proveedor INNER JOIN proveedor_x_suministro on proveedor.id_proveedor=proveedor_x_suministro.id_proveedor INNER JOIN suministro on suministro.id_suministro=proveedor_x_suministro.id_suministro";
+    $sql="SELECT proveedor.id_proveedor,suministro.id_suministro,suministro.descripcion,suministro.nombre,proveedor.nombre FROM proveedor INNER JOIN proveedor_x_suministro on proveedor.id_proveedor=proveedor_x_suministro.id_proveedor INNER JOIN suministro on suministro.id_suministro=proveedor_x_suministro.id_suministro";
 
     $query=mysqli_query($con,$sql);
     

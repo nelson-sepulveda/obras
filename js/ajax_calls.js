@@ -91,7 +91,7 @@ submitHandler: function(form){
     } 
 		else
 		{
-			$('#div_error_login').html(obj.error);
+			console.log('No pudo ingresar');
 			$('#usuario').val('')
 			$('#pass').val('')
 		}
@@ -417,7 +417,7 @@ $('#administrar_obra').on('show.bs.modal', function(event){
 
 	$('#nombre_obra').html(nombre);
 	var modal = $('#administrar_obra');
-	modal.find('#IDOBRA').val(id)
+	modal.find('#IDOBRA').val(id);
 });
 
 
@@ -470,12 +470,10 @@ submitHandler: function(form){
 $('#obra_admin').validate({
 	rules:{
 		cantidadped:{required:true},
-		fechaped :{required:true},
 	},
 	messages:
 	{
 		cantidadped:"Cantidad Vacio",
-		fechaped :"Fecha Vacio",
 	},
 submitHandler: function(form){
 	var formulario = $('#obra_admin');	
@@ -485,10 +483,9 @@ submitHandler: function(form){
 	method:'post',
 	data:formulario.serialize(),
  success : function(data)
-	 {
+	{
 			$('#div_ajax_suministro_obra').html(data);
 			$('#cantidadped').val('')
-			$('#fechaped').val('')
 	}
   });
  }

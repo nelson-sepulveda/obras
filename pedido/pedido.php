@@ -17,18 +17,15 @@ $con=@mysqli_connect('localhost', 'root', '', 'obras');
   $suma= (int)$max[0];
   $id_last=$suma+1;
 
-  $fecha = $_POST['fechaped'];
+  $fecha = $hoy = date("Y-m-d");
   $cantidad = $_POST['cantidadped'];
   $ID_obra = $_POST['IDOBRA'];
   $sum = $_POST['suminis'];
   $string = $sum[0];
 
-  echo $ID_obra;
-
   $split = explode("-",$string);
 
   $id_proveedor = $split[0];
-  echo $id_proveedor;
   $id_suministro = $split[1];
 
   $sql_pedido = "INSERT INTO PEDIDO(id_pedido,id_obra,id_proveedor,id_suministro,cantidad,fecha) VALUES('$id_last','$ID_obra','$id_proveedor','$id_suministro','$cantidad','$fecha')";

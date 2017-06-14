@@ -100,7 +100,6 @@
             <?php include('../modal/registrar_proveedor.php'); ?>
             <?php include('../modal/registrar_empleado.php'); ?>
             <?php include('../modal/admin_obra.php'); ?>
-            <?php include('../modal/generar_pdf.php'); ?>
             <!--home section-->
 
 
@@ -142,9 +141,10 @@
                         <div class="col-sm-6 clearfix">
                             <div class="feature wow fadeInLeft animated" data-wow-offset="120" data-wow-duration="1.5s">
                                 <!--<i class="fa fa-dollar"></i>-->
-                                <h4 class="text-white">Documentacion</h4>
+                                <h4 class="text-white">Tus obras</h4>
                                 <p class="text-white">
-                                    Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labor.
+                                    Podras conocer toda la informacion de los empleados
+                                    generando un reporte sobre ellos para tener un control sobre en las obras en las que trabajan, podras registrarlos a alguna de tus obras para así llevar un control de ellos
                                 </p>
                             </div><!--end feature-->
                         </div>
@@ -152,9 +152,9 @@
                         <div class="col-sm-6 clearfix">
                             <div class="feature wow fadeInRight animated" data-wow-offset="120" data-wow-duration="1.5s">
                                 <!--<i class="fa fa-line-chart"></i>-->
-                                <h4 class="text-white">Flexible &amp; Modular</h4>
+                                <h4 class="text-white">Tus Reportes</h4>
                                 <p class="text-white">
-                                    Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labor.
+                                    Podras obtener el reporte general de la obra, definiendo las informacion necesaria para poder sobre llevarla como sus fechas, su nombre, sus costos entre otros.
                                 </p>
                             </div><!--end feature-->
                         </div>
@@ -193,12 +193,16 @@
                    
                     <div class="col-sm-6">
                         <div class="additional-links editContent">
-                            Todos los derechos reservados 2017
+                            Universidad Francisco de Paula Santander<br>
+                            Todos los derechos reservados <br>2017
                             <!--<a href="#">Privacy Policy</a> | <a href="#">Terms</a> -->
                         </div>
                     </div>
                      <div class="col-sm-6">
                         <div class="social-btns pull-right">
+                            Angel Ortiz - 1151461 <br>
+                            Andrés Orduz 1150470
+
                             <!--<a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>
                             <a href="#"><i class="fa fa-google-plus"></i></a>

@@ -5,7 +5,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Inicio Sesion</h4>
       </div>
-      <div id="div_error_login"> </div>
+      <div id="div_error_login"></div>
       <div class="modal-body">
         <form id="loginData" method="post" action="page_part/login_usuario.php">
           <div class="modal-body">
@@ -15,7 +15,7 @@
               </div>
             <div class="form-group">
                 <label for="nombre" class="control-label">Contraseña:</label>
-                <input type="text" class="form-control" id="pass" name="pass"  placeholder="Digite su contraseña">
+                <input type="password" class="form-control" id="pass" name="pass"  placeholder="Digite su contraseña">
             </div>
           </div>  
           <div class="modal-footer">

@@ -21,7 +21,7 @@
                 while($row = mysqli_fetch_row($datos))
                 {
                   ?>
-                    <option value="<?php echo $row[0].'-'.$row[1]; ?>"><?php printf($row[2]); ?></option>
+                    <option value="<?php echo $row[0].'-'.$row[1]; ?>"><?php echo $row[2] . ' - '. $row[4]; ?></option>
                   <?php
                 }
               ?>
@@ -30,10 +30,6 @@
               <div class="form-group">
                 <label for="codigo" class="control-label">Cantida:</label>
                 <input type="text" class="form-control" id="cantidadped" name="cantidadped"   placeholder="Digite la cantidad">
-              </div>
-              <div class="form-group">
-                <label for="codigo" class="control-label">Fecha:</label>
-                <input type="date" class="form-control" id="fechaped" name="fechaped"   placeholder="Digite la fecha">
               </div>
           </div>  
           <div class="modal-footer">

@@ -40,18 +40,20 @@ class PDF extends FPDF
         $this->Ln(25);
     }
 
-    function get_content($txt)
+    function get_content($txt,$all)
     {  
        $this->SetFont('Arial','',12);  
 
        $row = mysqli_fetch_row($txt);
 
        $this->Cell(40,5,'Codigo de Obra :  '.$row[0],0,1,'L');
-       $this->Cell(40,5,'Nombre:  '.$row[1],0,1,'L');
+       while($f = mysqli_fetch_row($all))
+       {
+         $fila='Nombre Administrador: '. $f[2] .' - codigo: '. $f[1] . ' Salario: '. $f[3];  
+         $this->MultiCell(0,5,$fila);
+       }
        $this->Cell(40,5,'Fecha Inicio:  '.$row[2],0,1,'L');
        $this->Cell(40,5,'Fecha Fin:  '.$row[3],0,1,'L');
-       $this->Cell(40,5,'Nombre Administrador:  '.$row[5],0,1,'L');
-       $this->Cell(40,5,'Salario Administrador:  '.$row[6],0,1,'L'); 
        $this->Cell(40,5,'ID proveedor :  '.$row[8],0,1,'L');
        $this->Cell(40,5,'Contrato :  '.$row[9],0,1,'L');
        
@@ -64,8 +66,11 @@ class PDF extends FPDF
 
   $sql = "select o.id_obra as \"ID obra\", o.nombre as \"Nombre de la obra\", o.fecha_inicio as \"Fecha de inicio\", o.fecha_fin as \"Fecha de finalización\", oa.id_admin as \"ID administrador\", concat(a.nombre, \" \",a.apellido) as \"Nombre del administrador\", oa.salario_admin as \"Salario del administrador\", concat(pe.nombre, pe.apellido) as \"Nombre del empleado\", op.id_proveedor as \"ID del proveedor\", op.contrato as \"Contrato\", p.nombre as \"Nombre del proveedor\" from obra o left join obra_x_admin oa on (o.id_obra = oa.id_obra) left join administrador a on (oa.id_admin = a.id_administrador) left join personal pe on (o.id_obra = pe.id_obra) left join obra_x_proveedor op on (o.id_obra = op.id_obra) left join proveedor p on (op.id_proveedor = p.id_proveedor) where o.id_obra='$id'";
 
+  $sql_administradores = "select oa.id_obra as \"ID obra\", oa.id_admin as \"ID administrador\", \n". "concat(a.nombre,\" \", a.apellido) as \"Nombre\", oa.salario_admin \n" . "from obra_x_admin oa \n". "inner join administrador a on (oa.id_admin=a.id_administrador) \n". "where id_obra = '$id'";
+
   $sql_admin = "SELECT * FROM ADMINISTRADOR WHERE id_administrador='$session'";
 
+  $all_admin = mysqli_query($con,$sql_administradores);
   $query_administrador = mysqli_query($con,$sql_admin);
   $datos_admin = mysqli_fetch_row($query_administrador);
   $query_general = mysqli_query($con,$sql);
@@ -73,7 +78,7 @@ class PDF extends FPDF
     $pdf = new PDF();
     $pdf->AddPage('P','Letter');
     $pdf->Cell(40,20,'Reporte General',0, 1 , ' L ');
-    $pdf->get_content($query_general);
+    $pdf->get_content($query_general,$all_admin);
     $pdf->ln(25);
     // $pdf->Cell(40,20,'Total Salarios: '.$dato[0],0,1,'L');
     $pdf->ln(10);

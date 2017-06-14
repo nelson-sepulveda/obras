@@ -32,8 +32,7 @@ $con=@mysqli_connect('localhost', 'root', '', 'obras');
     else
     {
       echo json_encode(array(
-        'login'=>false,
-        'error'=>get_error()
+        'login'=>false
       ));
     }
 
@@ -41,8 +40,8 @@ $con=@mysqli_connect('localhost', 'root', '', 'obras');
 function geterror()
 {
   return 
-  '<div class="alert alert-danger" role="alert">
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
+  "<div class='alert alert-danger' role='alert'>
+    <button type='button' class='close' data-dismiss='alert'>&times;</button>
         <strong>Error!</strong>
-    </div>';
+    </div>";
 }

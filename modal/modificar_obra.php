@@ -16,11 +16,11 @@
               </div>
             <div class="form-group">
                 <label for="nombre" class="control-label">Fecha Inicio Obra:</label>
-                <input type="text" class="form-control" id="iniobra" name="iniobra"  placeholder="Fecha Inicio obra" value="">
+                <input type="date" class="form-control" id="iniobra" name="iniobra"  placeholder="Fecha Inicio obra" value="">
             </div>
             <div class="form-group">
                 <label for="nombre" class="control-label">Fecha Fin Obra:</label>
-                <input type="text" class="form-control" id="finobra" name="finobra"  placeholder="Fecha Fin obra" value="">
+                <input type="date" class="form-control" id="finobra" name="finobra"  placeholder="Fecha Fin obra" value="">
             </div>
           </div>  
           <div class="modal-footer">
